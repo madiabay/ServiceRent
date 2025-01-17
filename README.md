@@ -28,6 +28,7 @@ http://127.0.0.1:8000/swagger/
 
 <img width="574" alt="image" src="https://github.com/user-attachments/assets/9971f952-4e2f-47e2-b5f4-15fe11eab3c3" />
 
+
 Для таких вложенных путей, как /orders/{order_pk}/products/{order_product_pk}/, использовал пакет drf-nested-routers.
 
 Подключил Swagger API для упрощенного взаимодействия с API.
