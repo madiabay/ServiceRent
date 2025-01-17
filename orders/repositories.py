@@ -51,11 +51,11 @@ class OrderRepositoryV1:
         # на последний заказ смотрим, потому что по дефолту сортируется по ordering = ('-created_at',)
         last_order_end_date = (Order.objects.prefetch_related('order_products')
                                .filter(order_products__product_id=product.id)
-                               .first().end_date)
-        if last_order_end_date >= data['start_date']:
+                               .first())
+        if last_order_end_date and last_order_end_date.end_date >= data['start_date']:
             raise ValidationError('Продукт все еще в аренде')  # ВТОРОЕ УСЛОВИЕ
 
-        with transaction.atomic():  # ДОПОЛНИТЕЛЬНОЕ УСЛОВИЕ
+        with transaction.atomic():  # ДОПОЛНИТЕЛЬНОЕ ТРЕБОВАНИЯ
             order = Order.objects.create(
                 start_date=data['start_date'],
                 end_date=data['end_date'],

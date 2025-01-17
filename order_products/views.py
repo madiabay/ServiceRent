@@ -43,7 +43,6 @@ class OrderProductStatisticViewSet(APIView):
         manual_parameters=[start_time_param, end_time_param],
     )
     def get(self, request):
-        breakpoint()
         try:
             # get periods from query_params
             start_time = parse_datetime(request.query_params.get('start_time'))
