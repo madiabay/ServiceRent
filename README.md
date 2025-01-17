@@ -15,3 +15,7 @@ pip install -r requirements.txt
 
 # APIs swagger url
 http://127.0.0.1:8000/swagger/
+
+
+# Краткое описание проекта
+<img width="574" alt="image" src="https://github.com/user-attachments/assets/9971f952-4e2f-47e2-b5f4-15fe11eab3c3" />
